@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset02.css">
+    <link rel="stylesheet" href="./css/ryheader.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="./cart.js"></script>
+    <title>我的购物车</title>
+</head>
+<body>
+    <header id="header">
+        <header class="c_header container">
+            <header class="l_header">
+                <a href="#">首页</a>
+                <span></span>
+                <a href="#">华为官网</a>
+                <span></span>
+                <a href="#">荣耀官网</a>
+                <span></span>
+                <a href="#">花粉俱乐部</a>
+                <span></span>
+                <a href="#">V码(优购码)</a>
+                <span></span>
+                <a href="#">企业购</a>
+                <span></span>
+                <a href="#">Select Region</a>
+            </header>
+            <header class="r_header">
+                <ul>
+                    <li>
+                        <a href="#">请登录</a>
+                        <a href="#">注册</a>
+                        <span class="line"></span>
+                    </li>
+                    <li>
+
+                        <a href="#">我的订单</a>
+
+                    </li>
+
+                    <li>
+                        <span class="line"></span>
+                        <a href="#" class="g_header">客户服务
+                            <i class="iconfont icon-xjta"></i>
+                        </a>
+
+
+                        <span class="line"></span>
+                        <header class="service">
+                            <a href="#">帮助中心</a>
+                            <br>
+                            <a href="#">联系客服</a>
+                        </header>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            网站导航
+                            <i class="iconfont icon-xjta"></i>
+                        </a>
+
+                        <span class="line"></span>
+                        <header class="snav">
+                            <a href="#">频道</a>
+                            <a href="#">产品</a>
+                            <a href="#">增值服务</a>
+                            <a href="#">会员</a>
+                        </header>
+                    </li>
+                    <li>
+                        <a href="#">手机版
+                            <i class="iconfont icon-xjta"></i>
+                        </a>
+
+                        <span class="line"></span>
+                        <header class="mall">
+                            <a href="#">华为商城App</a>
+                            <br>
+                            <hr>
+                            <a href="#">华为商城公众号</a>
+                            <br>
+                            <hr>
+                            <a href="#">微信小程序</a>
+                        </header>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-gwc"></i>
+                            购物车(0)
+
+                        </a>
+                        <header class="cart">
+                            <header class="a_cart">
+                                <i class="iconfont icon-gwc"></i>
+                            </header>
+                            <p>你的购物车是空的,赶紧去抢购吧</p>
+                        </header>
+                    </li>
+
+                </ul>
+            </header>
+        </header>
+    </header>
+    <nav id="nav">
+        <section class="innernav container">
+            <section class="n-l">
+            <a href="#" title="荣耀商城">
+                <img src="./images/VMALL.jpg" alt="荣耀商城">
+            </a>
+            <h1>我的购物车</h1>
+            </section>
+            </section>
+        </section>
+    </nav>
+    <section id="main">
+        <section class="banner container">
+            <img src='images/infor_03.jpg' alt="">您还没有登录！登录后可查看之前加入的商品<a href="../login/login1.html">登 录</a>
+        </section>
+        <section class="cartlist1 container show">
+            <span class="gwc"><i class="iconfont icon-gwc"></i></span>
+            <p>您的购物车里什么也没有哦~</p>
+            <a href="../rongyao.html">去逛逛</a>
+        </section>
+        <div class="cartlist2 container">
+                <h2>商品列表</h2>
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>商品序号</th>
+                            <th>商品名称</th>
+                            <th>商品图片</th>
+                            <th>商品价格</th>
+                            <th>商品数量</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                    </tbody>
+                </table>
+                <a href="../login/login.html" class="btn6">立即结算</a> <i id="totalprice">总金额&yen;:</i> 
+        </div>
+        <h2 class="container">热销推荐</h2>
+        <section class="hot container">
+          <section class="pic1"></section>
+          <section class="pic2"></section>
+          <section class="pic3"></section>
+          <section class="pic4"></section>
+          <section class="pic5"></section>
+        </section>
+    </section>
+    
+</body>
+<script>
+   
+    var car =new Car();
+  var carlist=car.getcar();
+  if(carlist[0].id>=0){
+      $(".cartlist1").removeClass('show');
+      $(".cartlist2").addClass('show');
+  }else{
+    $(".cartlist1").addClass('show');
+  }
+  
+  var str=``;
+  for(var i=0;i<carlist.length;i++){
+      str+=`<tr>
+                <td>${carlist[i].id}</td>
+                <td>${carlist[i].name}</td>
+                <td class="plcc"><img src="${carlist[i].pic}"></td>
+                <td>${carlist[i].price}</td>
+                <td><span onclick="jiaNum(this,${carlist[i].id},${carlist[i].number})">+</span><input type="text" id="txt" value="${carlist[i].number}"><span onclick="jianNum(this,${carlist[i].id},${carlist[i].number})">-</span></td>
+                <td><button class="btn btn-danger" onclick="removeCar(${carlist[i].id})">删除</button></td>
+            </tr>`
+  }
+    document.getElementsByTagName("tbody")[0].innerHTML=str;
+    document.getElementById("totalprice").innerHTML+=car.priceTotal();
+  function removeCar(id){
+      if(!confirm("确认是否删除")){
+          return
+      }
+      car.delCar(id);
+      location.reload();
+      }
+      function jiaNum(res,id,number){
+          var parent=res.parentElement;
+          var child=Number(parent.children[1].value);
+          for(var i=0;i<carlist.length;i++){
+              if(carlist[i].id==id){
+                child=carlist[i].number++;
+                
+                parent.children[1].value=child+1;
+                if(parent.children[1].value>=10){
+                 $("#txt").prop('disabled',true).val("10");
+                child= carlist[i].number=10;
+             }
+              }
+              
+          }
+          localStorage.setItem('carlist',JSON.stringify(carlist));
+        location.reload();
+          
+      }
+      function jianNum(res,id,number){
+          var parent=res.parentElement;
+          var child=Number(parent.children[1].value);
+         
+          for(var i=0;i<carlist.length;i++){
+              if(carlist[i].id==id){
+                child=carlist[i].number--;
+                parent.children[1].value=child-1;
+                
+                if(child<=1){
+                $("#txt").prop('disabled',true).val("1");
+                child= carlist[i].number=1;
+             }
+              }
+          }
+          localStorage.setItem('carlist',JSON.stringify(carlist));
+        location.reload();
+      }
+    //   $("#txt").on('change',function(){
+          
+    //         var child=$("#txt").val();
+    //       for(var n=0;n<child.length)
+    //       for(var i=0;i<carlist.length;i++){
+    //           carlist[i].num=child;
+    //       }
+    //       localStorage.setItem('carlist',JSON.stringify(carlist));
+    //      location.reload();
+    //   })
+</script>
+</html>

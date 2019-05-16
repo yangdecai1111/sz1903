@@ -1,0 +1,77 @@
+#other{
+    height: 30px;
+    background: #abc;
+}
+/* 整个宽度 */
+.container{
+    width: 1258px;
+}
+
+/* 购物车顶部标题 */
+
+/* 订单列表 */
+.buy{
+    overflow: hidden;
+}
+.buy li{
+    float: left;
+}
+.buy .buy_pic{
+    display: inline-block;
+    width: 102px;
+    height: 99px;
+}
+/* 调整间距 */
+.buy .buy_name{
+    margin-left: 12px;
+}
+.buy .buy_price{
+    margin-left: 93px;
+}
+.buy .buy_taxian{
+    margin-left: 64px;
+}
+/* 数量部分 */
+.buy_taxian{
+    /* overflow: hidden; */
+    display: inline-block;
+    width: 80px;
+    height: 44px;
+}
+.buy_taxian .order_left{
+    width: 64px;/*64*/
+    height: 44px;
+    border: 1px solid #d6d6d6;
+    margin-left: 10px;
+}
+
+.buy_taxian .order_left .number{
+    float: left;
+    width: 41px;
+    height: 44px;
+    border-right: 1px solid #d6d6d6;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    line-height: 44px;
+}
+.buy_taxian .order_left .jiajian{
+    float: left;
+    width: 21px;
+    height: 44px;
+    font-size: 16px;
+    color: #777777;
+}
+.buy_taxian .order_left #add{
+    width: 21px;
+    height: 21px;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #d6d6d6;
+}
+.buy_taxian .order_left #reduce{
+    width: 21px;
+    height: 21px;
+    background: #fff;
+    border: none;
+}

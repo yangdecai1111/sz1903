@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>荣耀</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="css/detailed_information.css">
+    <script src="js/jquery.js"></script>
+    <script src="./layui/layui.js"></script>
+    <title>详情页</title>
+</head>
+<body>
+    <div id="other"></div>
+    <!-- 顶部导航 -->
+    <div id="header">
+        <a href="../rongyao.html">首页</a>
+        <a href="#">手机</a>
+        <a href="#">荣耀</a>
+        <a href="#">荣耀20i 3200万AI自拍 超广角三摄 全网通 6GB+64GB（渐变红)</a>
+    </div>
+
+    <!-- 主体部分 -->
+    <div id="main" class="container">
+        <!-- 左侧 -->
+        <div class="left">
+            <!-- 大图开始 -->
+            <div class="big_photo small_box">
+                <div class="mask" style="position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;z-index:2;cursor:move;">
+                <!-- mask -->
+                </div>
+                <div class="glass float_layer"> </div>
+                <img src="./images/phone1.jpg" alt="" id="bigPicture" style="width:450px;height:450px">   
+            </div>
+            <div class="detail_pic" id="detail_box">
+                <img src="./images/phone1.jpg" alt="" id="detail_img" style="position:absolute">
+            </div>
+            <!-- 大图结束 -->
+
+            <div class="small_photo">
+                
+                    <button id="btn_left" class="layui-btn layui-btn-sm layui-btn-primary" style="width:38px;height:38px;border-radius:50%">
+                        <i class="layui-icon">&#xe603;</i>
+                    </button>
+                    <!-- .small_photo .box_inner -->
+                    <span class="box">
+                        <div class="box_inner">
+                            <span id="smallpic1">
+                                <img src="./images/spic1.jpg" alt="" id="smallpic11">
+                            </span>
+                            <span id="smallpic2">
+                                <img src="./images/spic2.jpg" alt="">
+                            </span>
+                            <span id="smallpic3">
+                                <img src="./images/spic3.jpg" alt="">
+                            </span>
+                            <span id="smallpic4">
+                                <img src="./images/spic4.jpg" alt="">
+                            </span>
+                            <span id="smallpic5">
+                                <img src="./images/spic5.jpg" alt="">
+                            </span>
+                            <span id="smallpic6">
+                                <img src="./images/spic6.jpg" alt="">
+                            </span>
+                            <span id="smallpic7">
+                                <img src="./images/spic7.jpg" alt="">
+                            </span>
+                            <span id="smallpic8">
+                                <img src="./images/spic8.jpg" alt="">
+                            </span>
+                        </div>
+
+                    </span>
+
+                    <button id="btn_right" class="layui-btn layui-btn-sm layui-btn-primary" style="width:38px;height:38px;border-radius:50%">
+                        <i class="layui-icon">&#xe602;</i>
+                    </button>                    
+
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="right">
+            <h3 id="name">荣耀20i 3200万AI自拍 超广角三摄 全网通 6GB+64GB（渐变红）</h3>
+            <p>3200万AI自拍 购新机送豪华券包，更有机会赢多重好礼！</p>
+            <!-- 价格 -->
+            <div class="price">
+                <div class="price_left">
+                    <p>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</p>
+                    <p>促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</p>
+                </div>
+                <div class="price_right">
+                    <p class="zhuyi" id="price">¥1599.00</p>
+                    <p><span>整点赠送</span>10/12/14/16/20点下单前200赠AM115耳机（荣耀指定手机共享）</p>
+                    <p><span>商品赠券</span>送善诊470元关爱父母双人体检套餐</p>
+                    <p><span>购机赠券</span>送红酒兑换券+全棉时代体验包券+随手印定制手机壳券（活动结束后站内信发放）</p>
+                    <p><span>赠送积分</span>购买即赠商城积分，积分可抵现~</p>
+                </div>
+            </div>
+            <!-- 服务说明 -->
+            <div class="service">
+                <div class="service_left">
+                    <p>服务说明</p>
+                </div>
+                <div class="service_right">
+                    <p>
+                        广东 > 深圳 > 福田现货，今天23:59前付款，预计5月9日（明天）送达
+                        已满48元已免运费 由华为商城负责发货，并提供售后服务
+                    </p>
+                </div>
+            </div>
+            <!-- 商品编码 -->
+            <div class="shop">
+                <div class="shop_left"><p>商品编码</p></div>
+                <div><p id="id"></p></div>
+            </div>
+            <!-- 分割线 -->
+            <div style="width:100%; height:2px; border-top:1px solid #999; clear:both;"></div>
+            <!-- 选择颜色 -->
+            <div class="color" id="color">
+                <div class="color_left"><p>选择颜色</p></div>
+                <div class="color_right" id="phone_color">
+                    <div class="red_border">渐变红</div>
+                    <div>渐变蓝</div>
+                    <div>幻夜黑</div>
+                </div>
+            </div>
+            <!-- 选择版本 -->
+            <!-- $("#version .version_right").children -->
+            <div class="version" id="version">
+                <div class="version_left"><p>选择版本</p></div>
+                <div class="version_right">
+                    <div class="red_border">全网通 6GB+64GB</div>
+                    <div>全网通 4GB+128GB</div>
+                    <div>全网通 6GB+256GB</div>
+                </div>
+            </div>
+            <!-- 选择套餐 -->
+            <div class="set" id="set">
+                <div class="set_left"><p>选择套餐</p></div>
+                <div class="set_right">
+                    <div class="red_border">官方标配</div>
+                    <div>套餐一</div>
+                    <div>套餐二</div>
+                    <div>套餐三</div>
+                </div>                
+            </div>
+            <!-- 保障服务 -->
+            <div class="protect">
+                <div class="protect_left"><p>保障服务</p></div>
+                <div class="protect_right">
+                    <div class="red_border">延长服务宝1年 ￥158</div>
+                    <div>碎屏服务宝1年 ￥109</div>
+                </div>  
+            </div>
+            <!-- 已选择商品 -->
+            <div class="choice">
+                <div class="choice_left">已选择商品:</div>
+                <div class="choice_right">
+                    <span>渐变红</span> / <span>全网通 6GB+64GB</span> / <span>官方标配</span>
+                </div>
+            </div>
+            <!-- 加入购物车 (引用layui)-->
+            <!-- .order #add #reduce #number -->
+            <div class="order">
+                <div class="order_left">
+                    <div class="number" id="number">
+                        1
+                    </div>
+                    <div class="jiajian">
+                        <input type="button" value="+" id="add">
+                        <input type="button" value="-" id="reduce">
+                    </div>
+                </div>
+
+                <div class="order_right">
+                    <button class="layui-btn layui-btn-warm btn layui-btn-lg" id="addcar" onclick="caozuo()">加入购物车</button>
+                    <button class="layui-btn layui-btn-danger btn layui-btn-lg" id="login">立即下单</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="./js/car.js"></script>
+<script>
+//本地存储存商品的格式：[{"id":1,"price":100,"number":2},{},{},..] 
+//加入购物车
+    function caozuo(){
+        //获取商品的id,手机名称，单价，数量，总计，
+        //对应的id为id,name,price,number,
+        var id = document.getElementById('id').innerText;
+        var name = document.getElementById('name').innerText;
+        var price = document.getElementById('price').innerText;
+        var num = document.getElementById('number').innerText; 
+        var pic=$("#bigPicture").attr("src");
+        
+        var number=Number(num);
+        var goods = {"id":id,"name":name,"price":price,"number":number,"pic":pic};
+        var car = new Car();
+        car.addCar(goods);
+        location.href="../cart/cartindex.html"        
+    }
+    $("#login").click(function(){
+        location.href="../login/login1.html"
+    })
+    // jQuery代码
+    $(function(){
+        // 通过url里的id获取json数据
+        var hid = window.location.href.split("=")[1];
+      
+        var hmoney = 0;
+        var hname = '荣耀';
+        var hsrc = "./img/1.png";
+        $.ajax({
+            url:"./goods.json",
+            async:false,
+            dataType:"json",
+            success:function(res){
+                for(var i=0;i<res.length;i++){
+                // console.log(res[i].name);
+                    if(res[i].id==hid){
+                        hmoney = res[i].price;
+                        hname = res[i].name;
+                        hsrc = res[i].src;
+                      $("#id").html(res[i].id)
+                        
+                } 
+            }
+         }});
+        
+        // console.log(hmoney);
+        // console.log(hname);
+        // console.log(hsrc);
+        $("#bigPicture").attr("src",hsrc);
+        $("#detail_img").attr("src",hsrc);
+        $("#name").text(hname);
+        $("#price").text(hmoney);
+        $("#smallpic11").attr("src",hsrc);
+        
+        
+
+        // ---------------------详情页左边图片部分--------------------
+        // 实现放大镜效果
+        // offsetLeft,offsetTop为子元素相对于父元素的位移   offsetLeft取到的是数值,stle.left取到的是字符串
+        // offsetWidth,offsetHeight为元素不包含滚动条的宽高
+        // event.clientX,event.clientY是相对于整个页面的X和Y
+        // $(".left .big_photo .detail_pic")
+        $(".left .big_photo").mouseover(function(){
+            // glass detail_pic
+            var _url = $(this).children().eq(0).attr("src");
+            $(".left .detail_pic img").attr("src",_url);
+            $(".left .detail_pic img").attr("width","912px");
+            $(".left .glass").show();
+            $(".left .detail_pic").show();
+            
+        });
+        
+        $(".left .mask").mousemove(function(e) {
+            var l = e.pageX - $(".left .small_box").offset().left - ($(".left .float_layer").width() / 2);
+            var t = e.pageY - $(".left .small_box").offset().left - ($(".left .float_layer").height() / 2);
+            if (l < 0) {
+                l = 0
+            }
+            if (l > $(this).width() - $(".left .float_layer").width()) {
+                l = $(this).width() - $(".left .float_layer").width()
+            }
+            if (t < 0) {
+                t = 0
+            }
+            if (t > $(this).height() - $(".left .float_layer").height()) {
+                t = $(this).height() - $(".left .float_layer").height()
+            }
+
+            $(".left .float_layer").css({
+                "left": l,
+                "top": t
+            })
+            var pX = e.pageX+20;
+            var pY = e.pageY-60;
+            if(pY>400){pY=e.pageY;}
+            // console.log(-pX,-pY);
+            $(".left .detail_pic img").css({
+                "left":-pX,
+                "top":-pY
+            })
+        })
+
+        $(".left .big_photo").mouseout(function(){
+            // glass detail_pic
+            $(".left .glass").hide();
+            $(".left .detail_pic").hide();
+        });       
+
+
+        // 鼠标移到小图标时
+        $("#smallpic1").mouseover(function(){
+            $("#smallpic1").css("border-color","#ca141d");
+            $("#bigPicture").attr("src",hsrc);
+            $("#detail_img").attr("src",hsrc);
+            $("#smallpic1").siblings().css("border-color","#fff");
+        });
+
+        $("#smallpic2").mouseover(function(){
+            $("#smallpic2").css("border-color","#ca141d");
+            $("#bigPicture").attr("src","./images/phone2.jpg");
+            $("#detail_img").attr("src","./images/phone2.jpg");
+            $("#smallpic2").siblings().css("border-color","#fff");
+        });
+        
+        $("#smallpic3").mouseover(function(){
+            $("#smallpic3").css("border-color","#ca141d");
+            $("#bigPicture").attr("src","./images/phone3.jpg");
+            $("#detail_img").attr("src","./images/phone3.jpg");
+            $("#smallpic3").siblings().css("border-color","#fff");
+        });
+        
+        $("#smallpic4").mouseover(function(){
+            $("#smallpic4").css("border-color","#ca141d");
+            $("#bigPicture").attr("src","./images/phone4.jpg");
+            $("#detail_img").attr("src","./images/phone4.jpg");
+            $("#smallpic4").siblings().css("border-color","#fff");
+        });
+        
+        $("#smallpic5").mouseover(function(){
+            $("#smallpic5").css("border-color","#ca141d");
+            $("#bigPicture").attr("src","./images/phone5.jpg");
+            $("#detail_img").attr("src","./images/phone5.jpg");
+            $("#smallpic5").siblings().css("border-color","#fff");
+        });
+        $("#smallpic6").mouseover(function(){
+            $("#smallpic6").css("border-color","#ca141d");
+            $("#bigPicture").attr("src","./images/phone6.jpg");
+            $("#detail_img").attr("src","./images/phone6.jpg");
+            $("#smallpic6").siblings().css("border-color","#fff");
+        });
+        $("#smallpic7").mouseover(function(){
+            $("#smallpic7").css("border-color","#ca141d");
+            $("#bigPicture").attr("src","./images/phone7.jpg");
+            $("#detail_img").attr("src","./images/phone7.jpg");
+            $("#smallpic7").siblings().css("border-color","#fff");
+        });
+        $("#smallpic8").mouseover(function(){
+            $("#smallpic8").css("border-color","#ca141d");
+            $("#bigPicture").attr("src","./images/phone8.jpg");
+            $("#detail_img").attr("src","./images/phone8.jpg");
+            $("#smallpic8").siblings().css("border-color","#fff");
+        });
+        // 鼠标按下左右按钮时
+        $("#btn_right").click(function(){    
+            $(".small_photo .box_inner").css("left","-=70px");
+            if($(".small_photo .box_inner").position().left == -280){
+                $(".small_photo .box_inner").css("left","-210px");
+            }  
+        });
+        $("#btn_left").click(function(){
+            $(".small_photo .box_inner").css("left","+=70px")
+            // alert($(".small_photo .box_inner").position().left);
+            if($(".small_photo .box_inner").position().left == 70){
+                $(".small_photo .box_inner").css("left","0px");
+            }
+        });
+        // ---------------------详情页右边-------------------
+        // .choice_right已选择商品
+        // 选择颜色
+        $("#phone_color").children().click(function(){
+            var index=1;
+            $(this).addClass("red_border");
+            $(this).siblings().removeClass("red_border");
+            var str = $(this).text();
+            if(str=="渐变红"){
+                $("#bigPicture").attr("src","./images/phone2.jpg");
+            }
+            if(str=="渐变蓝"){
+                // 大图的src设为渐变蓝
+                $("#bigPicture").attr("src","./images/jianbianlan.jpg");
+                $("#detail_img").attr("src","./images/jianbianlan.jpg")
+            }
+            if(str=="幻夜黑"){
+                $("#bigPicture").attr("src","./images/huanyehei.jpg");
+                $("#detail_img").attr("src","./images/huanyehei.jpg")
+            }
+            $(".choice_right").children().eq(0).text(str);
+            
+
+        });
+        // 选择版本
+        $("#version .version_right").children().click(function(){
+            $(this).addClass("red_border");
+            $(this).siblings().removeClass("red_border");
+            var str = $(this).text();
+            $(".choice_right").children().eq(1).text(str);
+        });
+        // 选择套餐
+        $("#set .set_right").children().click(function(){
+            $(this).addClass("red_border");
+            $(this).siblings().removeClass("red_border");
+            var str = $(this).text();
+            $(".choice_right").children().eq(2).text(str);
+        });
+        // 保障服务
+        $(".protect .protect_right").children().click(function(){
+            $(this).addClass("red_border");
+            $(this).siblings().removeClass("red_border");
+        });
+        // 购物车数量加减 .order #add #reduce #number
+        var _x = $(".order #number").text();
+        var _num = Number(_x);
+        $(".order #add").click(function(){
+            _num++;
+            $(".order #number").text(_num);
+            $(".order #reduce").attr("disabled",false);
+        });
+        $(".order #reduce").click(function(){
+            // if(_num == 1){
+            //     return ;
+            // }
+            _num--;
+            if(_num<=1){
+                $(".order #reduce").attr("disabled",true);
+            }else{
+                $(".order #reduce").attr("disabled",false);
+            }
+            $(".order #number").text(_num);
+            // console.log(num);
+        });
+
+
+
+    });
+</script>
+</html>
